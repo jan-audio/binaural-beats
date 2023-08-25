@@ -7,10 +7,12 @@
             //var basePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             var basePath = Directory.GetCurrentDirectory();
             basePath = Path.Combine(basePath, "App-Data", subPath);
-            var path = Path.GetDirectoryName(basePath);
-            path ??= basePath;
-            if (!Directory.Exists(path))
-                Directory.CreateDirectory(path);
+            if (basePath.Split(new[] { '\\', '/' }).LastOrDefault()?.Contains(".") ?? false)
+            {
+                basePath = Path.GetDirectoryName(basePath);
+            }
+            if (!Directory.Exists(basePath))
+                Directory.CreateDirectory(basePath);
             return basePath;
         }
 

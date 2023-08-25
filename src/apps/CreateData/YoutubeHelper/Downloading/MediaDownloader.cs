@@ -7,10 +7,10 @@ namespace CreateData.YoutubeHelper
 {
     public enum MediaDownloaderStatus
     {
-        Pendding = 0x0,
-        Running = 0x1,
-        Done = 0x2,
-        Exited = 0x3,
+        Pendding = 0x0030,
+        Running = 0x0031,
+        Done = 0x0032,
+        Exited = 0x0033,
     }
 
     public class MediaDownloader : IDisposable
